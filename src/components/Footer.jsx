@@ -1,5 +1,8 @@
 import { Wind, MessageCircle, Phone, MapPin } from 'lucide-react';
 
+const WHATSAPP_NUMBER = '5491112345678';
+const WHATSAPP_MSG = encodeURIComponent('Hola, quiero instalar un aire acondicionado');
+
 function InstagramIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16">
@@ -18,31 +21,28 @@ function FacebookIcon() {
   );
 }
 
-const WHATSAPP_NUMBER = '5491112345678';
-const WHATSAPP_MSG = encodeURIComponent('Hola, quiero instalar un aire acondicionado');
-
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-slate-900 text-slate-400">
-      <div className="max-w-6xl mx-auto px-4 py-14 grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-6xl mx-auto px-5 py-10 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
 
-        {/* Brand */}
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center">
-              <Wind size={18} className="text-white" />
+        {/* Brand — full width on mobile */}
+        <div className="col-span-2">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-8 h-8 md:w-9 md:h-9 bg-blue-600 rounded-xl flex items-center justify-center">
+              <Wind size={17} className="text-white" />
             </div>
-            <span className="text-white font-bold text-lg tracking-tight">
+            <span className="text-white font-bold text-base md:text-lg tracking-tight">
               Gorri<span className="text-blue-400">Clima</span>
             </span>
           </div>
-          <p className="text-sm leading-relaxed max-w-xs mb-5">
+          <p className="text-sm leading-relaxed max-w-xs mb-4">
             Servicio técnico de aire acondicionado profesional en CABA y GBA.
             Instalación, reparación y mantenimiento con garantía.
           </p>
-          <div className="flex gap-3">
+          <div className="flex gap-2.5">
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
               target="_blank"
@@ -62,8 +62,8 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h4 className="text-white font-semibold text-sm mb-4">Servicios</h4>
-          <ul className="space-y-2.5 text-sm">
+          <h4 className="text-white font-semibold text-sm mb-3 md:mb-4">Servicios</h4>
+          <ul className="space-y-2 text-sm">
             {['Instalación', 'Reparación', 'Mantenimiento', 'Carga de gas'].map((s) => (
               <li key={s}>
                 <a href="#servicios" className="hover:text-white transition-colors">{s}</a>
@@ -74,16 +74,16 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-white font-semibold text-sm mb-4">Contacto</h4>
+          <h4 className="text-white font-semibold text-sm mb-3 md:mb-4">Contacto</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
-              <Phone size={14} className="mt-0.5 shrink-0 text-blue-400" />
-              <a href="tel:+5491112345678" className="hover:text-white transition-colors">
+              <Phone size={13} className="mt-0.5 shrink-0 text-blue-400" />
+              <a href="tel:+5491112345678" className="hover:text-white transition-colors break-all">
                 +54 9 11 1234-5678
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <MessageCircle size={14} className="mt-0.5 shrink-0 text-green-400" />
+              <MessageCircle size={13} className="mt-0.5 shrink-0 text-green-400" />
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
                 target="_blank"
@@ -94,7 +94,7 @@ export default function Footer() {
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <MapPin size={14} className="mt-0.5 shrink-0 text-blue-400" />
+              <MapPin size={13} className="mt-0.5 shrink-0 text-blue-400" />
               <span>CABA y Gran Buenos Aires</span>
             </li>
           </ul>
@@ -102,7 +102,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+        <div className="max-w-6xl mx-auto px-5 py-4 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-xs text-center">
           <span>© {year} GorriClima — Todos los derechos reservados</span>
           <span>Lunes a Sábados, 8:00 – 20:00 hs</span>
         </div>

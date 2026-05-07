@@ -15,6 +15,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   const links = [
     { label: 'Servicios', href: '#servicios' },
     { label: 'Nosotros', href: '#nosotros' },
@@ -26,16 +32,16 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-5 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-sm group-hover:bg-blue-700 transition-colors">
-            <Wind size={20} className="text-white" />
+        <a href="#" className="flex items-center gap-2 group" onClick={() => setMenuOpen(false)}>
+          <div className="w-8 h-8 md:w-9 md:h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-sm group-hover:bg-blue-700 transition-colors">
+            <Wind size={18} className="text-white" />
           </div>
-          <span className={`font-bold text-lg tracking-tight transition-colors ${scrolled ? 'text-slate-800' : 'text-white'}`}>
+          <span className={`font-bold text-base md:text-lg tracking-tight transition-colors ${scrolled ? 'text-slate-800' : 'text-white'}`}>
             Gorri<span className="text-blue-400">Clima</span>
           </span>
         </a>
@@ -55,7 +61,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA */}
+        {/* CTA desktop */}
         <a
           href={WHATSAPP_URL}
           target="_blank"
@@ -68,7 +74,9 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'}`}
+          className={`md:hidden p-2 rounded-lg transition-colors ${
+            scrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menú"
         >
@@ -76,30 +84,33 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu overlay */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100 animate-fade-in">
-          <nav className="flex flex-col px-4 py-4 gap-1">
+        <div className="md:hidden fixed inset-0 top-[56px] bg-white z-40 flex flex-col animate-fade-in">
+          <nav className="flex flex-col px-5 pt-4 pb-6 gap-1 flex-1 overflow-y-auto">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium px-3 py-2.5 rounded-lg transition-colors"
+                className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium px-4 py-3.5 rounded-xl transition-colors text-base"
               >
                 {l.label}
               </a>
             ))}
+          </nav>
+          <div className="px-5 pb-8 pt-2 border-t border-slate-100">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold px-4 py-3 rounded-xl"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-center gap-2 bg-[#25d366] text-white font-bold px-4 py-4 rounded-2xl text-base w-full"
             >
-              <Phone size={16} />
-              Pedir presupuesto
+              <Phone size={18} />
+              Pedir presupuesto por WhatsApp
             </a>
-          </nav>
+          </div>
         </div>
       )}
     </header>

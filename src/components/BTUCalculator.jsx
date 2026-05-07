@@ -48,22 +48,23 @@ export default function BTUCalculator() {
     : encodeURIComponent('Hola, necesito asesoramiento para elegir un aire acondicionado');
 
   return (
-    <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-3xl mx-auto px-4">
-        <div className="text-center mb-10">
-          <span className="inline-block text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-3xl mx-auto px-5">
+        <div className="text-center mb-8 md:mb-10">
+          <span className="inline-block text-blue-600 text-xs font-semibold uppercase tracking-widest mb-2">
             Herramienta gratuita
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
             Calculadora de BTU
           </h2>
-          <p className="mt-3 text-slate-500 max-w-md mx-auto">
+          <p className="mt-2 text-slate-500 text-sm md:text-base max-w-md mx-auto">
             Descubrí qué potencia necesita tu ambiente en segundos.
           </p>
         </div>
 
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
-          <div className="grid sm:grid-cols-3 gap-5 mb-6">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-sm">
+          {/* Inputs — 1 col on mobile, 3 cols on sm+ */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
             {/* m2 */}
             <div className="flex flex-col gap-1.5">
               <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
@@ -71,6 +72,7 @@ export default function BTUCalculator() {
               </label>
               <input
                 type="number"
+                inputMode="decimal"
                 min="1"
                 max="200"
                 placeholder="Ej: 20"
@@ -121,7 +123,7 @@ export default function BTUCalculator() {
 
           <button
             onClick={calculate}
-            className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-sm hover:shadow-md"
+            className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-4 rounded-xl transition-all shadow-sm"
           >
             <Calculator size={18} />
             Calcular potencia necesaria
@@ -129,20 +131,22 @@ export default function BTUCalculator() {
 
           {/* Result */}
           {result && (
-            <div className="mt-6 bg-white border border-blue-100 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center gap-4 animate-fade-in-up">
-              <div className="flex-1">
-                <div className="text-xs text-slate-400 font-medium mb-1">Potencia recomendada</div>
+            <div className="mt-5 bg-white border border-blue-100 rounded-2xl p-4 md:p-5 flex flex-col gap-4 animate-fade-in-up">
+              <div>
+                <div className="text-xs text-slate-400 font-medium mb-0.5">Potencia recomendada</div>
                 <div className="text-2xl font-extrabold text-blue-600">{result.btu.toLocaleString()} BTU</div>
-                <div className="text-sm text-slate-600 mt-1">Equipo sugerido: <span className="font-semibold">{result.split}</span></div>
+                <div className="text-sm text-slate-600 mt-1">
+                  Equipo sugerido: <span className="font-semibold">{result.split}</span>
+                </div>
               </div>
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#25d366] hover:bg-[#20c05c] text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all shrink-0"
+                className="flex items-center justify-center gap-2 bg-[#25d366] hover:bg-[#20c05c] text-white font-semibold px-5 py-3.5 rounded-xl text-sm transition-all w-full"
               >
                 <MessageCircle size={16} />
-                Pedir presupuesto
+                Pedir presupuesto por este equipo
               </a>
             </div>
           )}

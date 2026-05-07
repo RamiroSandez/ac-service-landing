@@ -11,13 +11,14 @@ export default function FloatingWhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      className="fixed bottom-6 right-5 z-50 group"
+      className="fixed bottom-6 right-4 z-50 group"
+      style={{ bottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
     >
       {/* Pulse ring */}
       <span className="absolute inset-0 rounded-full bg-[#25d366] animate-ping opacity-40 pointer-events-none" />
 
-      {/* Button */}
-      <span className="relative flex items-center gap-2.5 bg-[#25d366] hover:bg-[#20c05c] text-white font-semibold text-sm px-4 py-3.5 rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-0.5">
+      {/* Mobile: icon only. sm+: icon + label */}
+      <span className="relative flex items-center gap-2.5 bg-[#25d366] hover:bg-[#20c05c] active:bg-[#1aad55] text-white font-semibold text-sm px-4 py-3.5 rounded-full shadow-xl transition-all">
         <MessageCircle size={22} />
         <span className="hidden sm:inline">Pedir presupuesto</span>
       </span>
