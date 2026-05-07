@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MessageCircle, Phone, Send, CheckCircle2 } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '5491112345678';
+const WHATSAPP_NUMBER = '34612345678';
 const WHATSAPP_MSG_DEFAULT = encodeURIComponent('Hola, quiero instalar un aire acondicionado');
 
 export default function ContactSection() {
@@ -31,7 +31,7 @@ export default function ContactSection() {
             Hablemos hoy
           </h2>
           <p className="mt-2 text-slate-500 text-sm md:text-base max-w-md mx-auto">
-            Respondemos en minutos. Sin turnos, sin esperas.
+            Respondemos en minutos. Sin esperas, sin complicaciones.
           </p>
         </div>
 
@@ -50,13 +50,13 @@ export default function ContactSection() {
               </div>
               <div className="min-w-0">
                 <div className="font-bold text-base">WhatsApp</div>
-                <div className="text-white/80 text-xs md:text-sm truncate">+54 9 11 1234-5678 · Respondemos al instante</div>
+                <div className="text-white/80 text-xs md:text-sm truncate">+34 612 345 678 · Respondemos al instante</div>
               </div>
               <span className="ml-auto text-white/60 shrink-0">→</span>
             </a>
 
             <a
-              href="tel:+5491112345678"
+              href="tel:+34612345678"
               className="flex items-center gap-4 bg-white hover:bg-blue-50 active:bg-blue-100 border border-slate-200 text-slate-800 rounded-2xl px-5 py-4 shadow-sm transition-all group"
             >
               <div className="w-11 h-11 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
@@ -64,7 +64,7 @@ export default function ContactSection() {
               </div>
               <div className="min-w-0">
                 <div className="font-bold text-base">Llamada</div>
-                <div className="text-slate-500 text-xs md:text-sm">+54 9 11 1234-5678 · Lun–Sáb, 8–20 hs</div>
+                <div className="text-slate-500 text-xs md:text-sm">+34 612 345 678 · Lun–Vie, 8–19 h</div>
               </div>
               <span className="ml-auto text-slate-300 shrink-0">→</span>
             </a>
@@ -75,7 +75,7 @@ export default function ContactSection() {
                 Garantía en todos nuestros servicios
               </div>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Todos los trabajos incluyen garantía por escrito. Si algo falla dentro del período, volvemos sin cargo adicional.
+                Todos los trabajos incluyen garantía por escrito. Si algo falla dentro del período, volvemos sin coste adicional.
               </p>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function ContactSection() {
                 type="text"
                 name="name"
                 required
-                placeholder="Ej: María López"
+                placeholder="Ej: María García"
                 value={form.name}
                 onChange={handleChange}
                 className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition"
@@ -104,7 +104,7 @@ export default function ContactSection() {
                 name="phone"
                 required
                 inputMode="tel"
-                placeholder="Ej: 11 1234-5678"
+                placeholder="Ej: 612 345 678"
                 value={form.phone}
                 onChange={handleChange}
                 className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition"
@@ -116,7 +116,7 @@ export default function ContactSection() {
               <textarea
                 name="message"
                 rows={3}
-                placeholder="Contanos qué necesitás..."
+                placeholder="Cuéntanos qué necesitas..."
                 value={form.message}
                 onChange={handleChange}
                 className="border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition resize-none"

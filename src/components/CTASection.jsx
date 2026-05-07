@@ -1,6 +1,6 @@
 import { MessageCircle, PhoneCall } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '5491112345678';
+const WHATSAPP_NUMBER = '34612345678';
 const WHATSAPP_MSG = encodeURIComponent('Hola, quiero instalar un aire acondicionado hoy');
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
@@ -14,7 +14,7 @@ export default function CTASection() {
       <div className="max-w-3xl mx-auto px-5 text-center relative">
         <div className="inline-flex items-center gap-2 bg-white/15 text-white/90 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
           <PhoneCall size={12} />
-          Atendemos hoy — sin cargo de visita
+          Atendemos hoy — presupuesto sin compromiso
         </div>
 
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-3">
@@ -24,7 +24,6 @@ export default function CTASection() {
           Consultá sin compromiso. Te enviamos un presupuesto gratis en minutos por WhatsApp.
         </p>
 
-        {/* Full-width on mobile */}
         <a
           href={WHATSAPP_URL}
           target="_blank"
@@ -37,8 +36,8 @@ export default function CTASection() {
 
         <p className="mt-5 text-blue-200/60 text-sm">
           También podés llamarnos al{' '}
-          <a href="tel:+5491112345678" className="underline text-blue-200 hover:text-white transition-colors">
-            +54 9 11 1234-5678
+          <a href="tel:+34612345678" className="underline text-blue-200 hover:text-white transition-colors">
+            +34 612 345 678
           </a>
         </p>
       </div>

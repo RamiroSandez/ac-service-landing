@@ -7,31 +7,31 @@ const stats = [
   { value: '100%', label: 'Con garantía' },
 ];
 
-const brands = ['Samsung', 'LG', 'Carrier', 'Midea', 'Gree', 'Inverter Pro'];
+const brands = ['Daikin', 'Mitsubishi', 'Fujitsu', 'LG', 'Samsung', 'Carrier'];
 
 const testimonials = [
   {
-    name: 'Martina G.',
-    location: 'Palermo, CABA',
+    name: 'Ana M.',
+    location: 'Centro, Málaga',
     text: 'Excelente servicio. Vinieron al día siguiente, instalaron el equipo en pocas horas y dejaron todo impecable. Muy recomendable.',
     stars: 5,
-    initial: 'M',
+    initial: 'A',
     color: 'bg-blue-500',
   },
   {
     name: 'Carlos R.',
-    location: 'San Isidro, GBA',
+    location: 'Teatinos, Málaga',
     text: 'Llamé por una reparación urgente y me atendieron el mismo día. Diagnóstico preciso y precio justo. Ya los tengo agendados para el mantenimiento.',
     stars: 5,
     initial: 'C',
     color: 'bg-teal-500',
   },
   {
-    name: 'Florencia M.',
-    location: 'Villa Urquiza, CABA',
-    text: 'Muy profesionales. Explicaron todo el proceso, me asesoraron sobre el equipo correcto para mi living. Trabajo de primera.',
+    name: 'Laura G.',
+    location: 'Marbella, Málaga',
+    text: 'Muy profesionales. Explicaron todo el proceso, me asesoraron sobre el equipo correcto para mi salón. Trabajo de primera calidad.',
     stars: 5,
-    initial: 'F',
+    initial: 'L',
     color: 'bg-purple-500',
   },
 ];
@@ -51,7 +51,7 @@ export default function Testimonials() {
     <section id="nosotros" className="py-16 md:py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-5">
 
-        {/* Stats bar — 2 cols mobile, 4 cols md */}
+        {/* Stats bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
           {stats.map(({ value, label }) => (
             <div key={label} className="text-center bg-white rounded-2xl py-5 px-2 shadow-sm border border-slate-100">
@@ -71,7 +71,7 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        {/* Testimonial cards — 1 col mobile, 3 col md */}
+        {/* Testimonial cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12">
           {testimonials.map(({ name, location, text, stars, initial, color }) => (
             <div key={name} className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex flex-col gap-3">

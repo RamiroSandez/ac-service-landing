@@ -1,13 +1,13 @@
 import { MapPin, CheckCircle2 } from 'lucide-react';
 
 const zones = [
-  'CABA (todas las comunas)',
-  'San Isidro · Vicente López',
-  'Tigre · San Fernando',
-  'Quilmes · Avellaneda',
-  'Lomas de Zamora · Lanús',
-  'La Matanza · Morón',
-  'Tres de Febrero · Hurlingham',
+  'Málaga capital (todos los barrios)',
+  'Torremolinos · Benalmádena',
+  'Marbella · Estepona',
+  'Fuengirola · Mijas',
+  'Nerja · Torre del Mar',
+  'Antequera · Vélez-Málaga',
+  'Ronda · Coin',
   'Consultar otras zonas',
 ];
 
@@ -23,11 +23,11 @@ export default function CoverageArea() {
               Zona de cobertura
             </span>
             <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
-              Atendemos en CABA<br />y alrededores
+              Atendemos en Málaga<br />y toda la provincia
             </h2>
             <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-7">
-              Contamos con técnicos distribuidos en toda la ciudad y el conurbano bonaerense.
-              Coordinamos tu visita en el día o el turno que más te convenga.
+              Contamos con técnicos distribuidos por toda la provincia de Málaga.
+              Coordinamos tu visita el mismo día o en el turno que más te convenga.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -46,12 +46,12 @@ export default function CoverageArea() {
               <div className="w-14 h-14 md:w-16 md:h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
                 <MapPin size={26} className="text-white" />
               </div>
-              <h3 className="text-white font-bold text-xl">Buenos Aires</h3>
+              <h3 className="text-white font-bold text-xl">Málaga, España</h3>
               <p className="text-slate-400 text-sm max-w-xs">
-                Ciudad Autónoma y Gran Buenos Aires
+                Capital y provincia de Málaga
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                {['CABA', 'Zona Norte', 'Zona Sur', 'Zona Oeste'].map((tag) => (
+                {['Málaga capital', 'Costa del Sol', 'Axarquía', 'Serranía'].map((tag) => (
                   <span key={tag} className="bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs px-3 py-1 rounded-full">
                     {tag}
                   </span>

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Phone, Menu, X, Wind } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
+import logo from '../assets/logo-siaca.jpeg';
 
-const WHATSAPP_NUMBER = '5491112345678';
+const WHATSAPP_NUMBER = '34612345678';
 const WHATSAPP_MSG = encodeURIComponent('Hola, quiero instalar un aire acondicionado');
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
@@ -15,7 +16,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -32,18 +32,18 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-4'
+        scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-6xl mx-auto px-5 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group" onClick={() => setMenuOpen(false)}>
-          <div className="w-8 h-8 md:w-9 md:h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-sm group-hover:bg-blue-700 transition-colors">
-            <Wind size={18} className="text-white" />
-          </div>
-          <span className={`font-bold text-base md:text-lg tracking-tight transition-colors ${scrolled ? 'text-slate-800' : 'text-white'}`}>
-            Gorri<span className="text-blue-400">Clima</span>
-          </span>
+        <a href="#" className="flex items-center" onClick={() => setMenuOpen(false)}>
+          <img
+            src={logo}
+            alt="SIACA"
+            className="h-10 md:h-12 w-auto object-contain"
+            style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
+          />
         </a>
 
         {/* Desktop nav */}

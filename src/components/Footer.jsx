@@ -1,6 +1,7 @@
-import { Wind, MessageCircle, Phone, MapPin } from 'lucide-react';
+import { MessageCircle, Phone, MapPin } from 'lucide-react';
+import logo from '../assets/logo-siaca.jpeg';
 
-const WHATSAPP_NUMBER = '5491112345678';
+const WHATSAPP_NUMBER = '34612345678';
 const WHATSAPP_MSG = encodeURIComponent('Hola, quiero instalar un aire acondicionado');
 
 function InstagramIcon() {
@@ -28,18 +29,17 @@ export default function Footer() {
     <footer className="bg-slate-900 text-slate-400">
       <div className="max-w-6xl mx-auto px-5 py-10 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
 
-        {/* Brand — full width on mobile */}
+        {/* Brand */}
         <div className="col-span-2">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 md:w-9 md:h-9 bg-blue-600 rounded-xl flex items-center justify-center">
-              <Wind size={17} className="text-white" />
-            </div>
-            <span className="text-white font-bold text-base md:text-lg tracking-tight">
-              Gorri<span className="text-blue-400">Clima</span>
-            </span>
+          <div className="mb-4">
+            <img
+              src={logo}
+              alt="SIACA"
+              className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+            />
           </div>
           <p className="text-sm leading-relaxed max-w-xs mb-4">
-            Servicio técnico de aire acondicionado profesional en CABA y GBA.
+            Servicio técnico de aire acondicionado profesional en Málaga y provincia.
             Instalación, reparación y mantenimiento con garantía.
           </p>
           <div className="flex gap-2.5">
@@ -78,8 +78,8 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <Phone size={13} className="mt-0.5 shrink-0 text-blue-400" />
-              <a href="tel:+5491112345678" className="hover:text-white transition-colors break-all">
-                +54 9 11 1234-5678
+              <a href="tel:+34612345678" className="hover:text-white transition-colors">
+                +34 612 345 678
               </a>
             </li>
             <li className="flex items-start gap-2">
@@ -95,7 +95,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <MapPin size={13} className="mt-0.5 shrink-0 text-blue-400" />
-              <span>CABA y Gran Buenos Aires</span>
+              <span>Málaga, España</span>
             </li>
           </ul>
         </div>
@@ -103,8 +103,8 @@ export default function Footer() {
 
       <div className="border-t border-slate-800">
         <div className="max-w-6xl mx-auto px-5 py-4 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-xs text-center">
-          <span>© {year} GorriClima — Todos los derechos reservados</span>
-          <span>Lunes a Sábados, 8:00 – 20:00 hs</span>
+          <span>© {year} SIACA — Todos los derechos reservados</span>
+          <span>Lunes a Viernes, 8:00 – 19:00 h</span>
         </div>
       </div>
     </footer>

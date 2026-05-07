@@ -1,19 +1,19 @@
 import { MessageCircle, ShieldCheck, Clock, Star } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '5491112345678';
+const WHATSAPP_NUMBER = '34612345678';
 const WHATSAPP_MSG = encodeURIComponent('Hola, quiero instalar un aire acondicionado');
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
 const badges = [
   { icon: ShieldCheck, text: 'Trabajo garantizado' },
-  { icon: Clock,       text: 'Respuesta en 24 hs' },
+  { icon: Clock,       text: 'Respuesta en 24 h' },
   { icon: Star,        text: '+500 instalaciones' },
 ];
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900">
-      {/* Decorative blobs — smaller on mobile */}
+      {/* Decorative blobs */}
       <div className="absolute -top-16 -right-16 w-64 h-64 md:w-[500px] md:h-[500px] bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 -left-10 w-52 h-52 md:w-[400px] md:h-[400px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -32,7 +32,7 @@ export default function Hero() {
           {/* Tag */}
           <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 animate-fade-in-up">
             <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-            Servicio técnico profesional · CABA y GBA
+            Servicio técnico profesional · Málaga y provincia
           </div>
 
           {/* Headline */}
@@ -41,7 +41,7 @@ export default function Hero() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
               profesional
             </span>{' '}
-            en tu zona
+            en Málaga
           </h1>
 
           {/* Subheadline */}
@@ -50,7 +50,7 @@ export default function Hero() {
             Técnicos certificados, marcas líderes y presupuesto sin cargo.
           </p>
 
-          {/* CTA buttons — stacked on mobile, row on sm+ */}
+          {/* CTA buttons */}
           <div className="mt-7 flex flex-col sm:flex-row gap-3 animate-fade-in-up delay-300">
             <a
               href={WHATSAPP_URL}
