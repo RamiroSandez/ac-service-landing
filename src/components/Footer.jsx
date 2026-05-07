@@ -31,11 +31,11 @@ export default function Footer() {
 
         {/* Brand */}
         <div className="col-span-2">
-          <div className="mb-4">
+          <div className="mb-4 inline-block bg-white rounded-xl px-3 py-1.5">
             <img
               src={logo}
               alt="SIACA"
-              className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+              className="h-8 md:h-9 w-auto object-contain"
             />
           </div>
           <p className="text-sm leading-relaxed max-w-xs mb-4">

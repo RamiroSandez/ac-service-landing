@@ -36,13 +36,16 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-5 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center" onClick={() => setMenuOpen(false)}>
+        {/* Logo — wrapped in a white pill so the JPEG background blends on any bg */}
+        <a
+          href="#"
+          onClick={() => setMenuOpen(false)}
+          className="flex items-center bg-white rounded-xl px-3 py-1.5 shadow-sm"
+        >
           <img
             src={logo}
             alt="SIACA"
-            className="h-10 md:h-12 w-auto object-contain"
-            style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
+            className="h-8 md:h-9 w-auto object-contain"
           />
         </a>
 
